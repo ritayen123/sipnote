@@ -1,4 +1,5 @@
 import type { OnboardingAnswer, DrinkRecord } from "../types";
+import { FLAVOR_SUPER_CATEGORIES } from "../types";
 
 // Taste vector: [acidity, sweetness, bitterness, saltiness, strength, texture, temperatureFeel, flavorWeight1, flavorWeight2, flavorWeight3]
 // Each dimension is 1-5
@@ -165,15 +166,17 @@ export function updateTasteVector(
   // dim 8: herbal/spice (herbs, spice, woody)
   // dim 9: rich/dessert (roasted, cream, special)
   if (record.flavorTags && record.flavorTags.length > 0) {
-    const fruityTags = ["檸檬","萊姆","橙","血橙","葡萄柚","柚子","金桔","草莓","覆盆子","藍莓","黑醋栗","蘋果","梨","桃子","芒果","百香果","鳳梨","荔枝","椰子","玫瑰","薰衣草","接骨木花","茉莉","橙花","紫羅蘭"];
-    const herbalTags = ["薄荷","羅勒","迷迭香","百里香","鼠尾草","薑","薑黃","肉桂","丁香","八角","豆蔻","胡椒","辣椒","橡木","雪松","泥煤","煙燻","藥草","苦艾","龍膽"];
-    const richTags = ["咖啡","濃縮咖啡","可可","黑巧克力","牛奶巧克力","杏仁","榛果","花生","鮮奶油","奶油","牛奶","蛋糕","餅乾","焦糖布丁","焦糖","太妃糖","香草","鹽味","礦物質感","海洋","鹹鮮"];
+    const superCats = [
+      FLAVOR_SUPER_CATEGORIES.fruity,
+      FLAVOR_SUPER_CATEGORIES.herbal,
+      FLAVOR_SUPER_CATEGORIES.rich,
+    ];
 
     const counts = [0, 0, 0];
     record.flavorTags.forEach((tag) => {
-      if (fruityTags.includes(tag)) counts[0]++;
-      if (herbalTags.includes(tag)) counts[1]++;
-      if (richTags.includes(tag)) counts[2]++;
+      superCats.forEach((cats, i) => {
+        if (cats.includes(tag)) counts[i]++;
+      });
     });
 
     const total = record.flavorTags.length;

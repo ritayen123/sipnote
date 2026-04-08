@@ -9,14 +9,21 @@ export interface AnalyticsEvent {
 export const analyticsService = {
   track(event: string, properties?: Record<string, string | number | boolean>): void {
     try {
+      // PII filter: only allow known safe property keys
+      const SAFE_KEYS = new Set(["category", "baseSpirit", "mode", "feature", "page", "count", "rating"]);
+      const safeProps = properties
+        ? Object.fromEntries(Object.entries(properties).filter(([k]) => SAFE_KEYS.has(k)))
+        : undefined;
+
       const events = this.getAll();
       events.push({
         event,
-        properties,
+        properties: safeProps,
         timestamp: new Date().toISOString(),
       });
-      // Keep last 1000 events
-      const trimmed = events.slice(-1000);
+      // Keep last 1000 events, auto-prune older than 30 days
+      const cutoff = new Date(Date.now() - 30 * 86400000).toISOString();
+      const trimmed = events.filter((e) => e.timestamp >= cutoff).slice(-1000);
       localStorage.setItem(ANALYTICS_KEY, JSON.stringify(trimmed));
     } catch {
       // Silent fail for analytics

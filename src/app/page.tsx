@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { AppProvider, useApp } from "../lib/context/AppContext";
+import { useApp } from "../lib/context/AppContext";
 import AuthScreen from "../components/onboarding/AuthScreen";
 import OnboardingFlow from "../components/onboarding/OnboardingFlow";
 import type { OnboardingAnswer } from "../lib/types";
@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import { CocktailIcon } from "../components/ui/Icons";
 import { analyticsService, EVENTS } from "../lib/services/analytics-service";
 
-function AppEntry() {
+export default function Page() {
   const { user, loading, refreshUser } = useApp();
   const [phase, setPhase] = useState<"loading" | "auth" | "onboarding" | "ready">("loading");
   const router = useRouter();
@@ -60,12 +60,4 @@ function AppEntry() {
   }
 
   return null;
-}
-
-export default function Page() {
-  return (
-    <AppProvider>
-      <AppEntry />
-    </AppProvider>
-  );
 }

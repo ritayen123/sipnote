@@ -8,11 +8,18 @@ interface PhotoUploadProps {
   onChange: (dataUrl: string | undefined) => void;
 }
 
+const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB input limit
+const MAX_OUTPUT_KB = 500; // 500KB output limit
+
 function compressImage(file: File, maxWidth: number): Promise<string> {
+  if (file.size > MAX_FILE_SIZE) {
+    return Promise.reject(new Error("照片太大，請選擇小於 10MB 的照片"));
+  }
+
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.onload = (e) => {
-      const img = new Image();
+      const img = new window.Image();
       img.onload = () => {
         let width = img.width;
         let height = img.height;
@@ -33,13 +40,21 @@ function compressImage(file: File, maxWidth: number): Promise<string> {
         }
 
         ctx.drawImage(img, 0, 0, width, height);
-        const dataUrl = canvas.toDataURL("image/jpeg", 0.8);
+
+        // Progressively lower quality if output too large
+        let quality = 0.8;
+        let dataUrl = canvas.toDataURL("image/jpeg", quality);
+        while (dataUrl.length > MAX_OUTPUT_KB * 1024 * 1.37 && quality > 0.3) {
+          quality -= 0.1;
+          dataUrl = canvas.toDataURL("image/jpeg", quality);
+        }
+
         resolve(dataUrl);
       };
-      img.onerror = () => reject(new Error("Failed to load image"));
+      img.onerror = () => reject(new Error("無法讀取照片"));
       img.src = e.target?.result as string;
     };
-    reader.onerror = () => reject(new Error("Failed to read file"));
+    reader.onerror = () => reject(new Error("無法讀取檔案"));
     reader.readAsDataURL(file);
   });
 }

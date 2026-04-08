@@ -29,6 +29,7 @@ export default function StarRating({
             key={star}
             type="button"
             disabled={readonly}
+            aria-label={`${star} 星`}
             className={`transition-transform ${readonly ? "cursor-default" : "cursor-pointer hover:scale-110"}`}
             onMouseEnter={() => !readonly && setHover(star)}
             onMouseLeave={() => !readonly && setHover(0)}

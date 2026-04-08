@@ -100,3 +100,23 @@ export const FLAVOR_CATEGORIES: Record<string, string[]> = {
   清新蔬菜類: ["黃瓜", "蘆薈", "西洋芹", "綠茶", "白茶", "抹茶", "伯爵茶"],
   特殊類: ["鹽味", "礦物質感", "海洋", "鹹鮮", "藥草", "苦艾", "龍膽"],
 };
+
+// Super-categories for vector dimensions 7-9
+// dim 7: fruity/floral, dim 8: herbal/spice, dim 9: rich/dessert
+export const FLAVOR_SUPER_CATEGORIES = {
+  fruity: [
+    ...FLAVOR_CATEGORIES["柑橘類"],
+    ...FLAVOR_CATEGORIES["果香類"],
+    ...FLAVOR_CATEGORIES["花香類"],
+  ],
+  herbal: [
+    ...FLAVOR_CATEGORIES["草本類"],
+    ...FLAVOR_CATEGORIES["辛香類"],
+    ...FLAVOR_CATEGORIES["木質煙燻類"],
+  ],
+  rich: [
+    ...FLAVOR_CATEGORIES["烘焙堅果類"],
+    ...FLAVOR_CATEGORIES["奶香甜點類"],
+    ...FLAVOR_CATEGORIES["特殊類"],
+  ],
+};

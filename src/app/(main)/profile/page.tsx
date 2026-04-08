@@ -5,7 +5,10 @@ import { useApp } from "../../../lib/context/AppContext";
 import { recordService } from "../../../lib/services/record-service";
 import { userService } from "../../../lib/services/user-service";
 import type { DrinkRecord } from "../../../lib/types";
-import TasteRadar from "../../../components/profile/TasteRadar";
+import dynamic from "next/dynamic";
+const TasteRadar = dynamic(() => import("../../../components/profile/TasteRadar"), {
+  loading: () => <div className="h-[280px] bg-bg-input rounded-xl animate-pulse" />,
+});
 import TasteInsights from "../../../components/profile/TasteInsights";
 import ProgressBar from "../../../components/ui/ProgressBar";
 import StarRating from "../../../components/ui/StarRating";

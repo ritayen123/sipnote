@@ -62,28 +62,54 @@ export default function HomePage() {
   const [loading, setLoading] = useState(true);
   const [shareRecord, setShareRecord] = useState<DrinkRecord | null>(null);
 
+  // Single consolidated data load
   useEffect(() => {
+    let cancelled = false;
     async function load() {
       await refreshUser();
     }
     load();
-  }, [refreshUser]);
+    return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
+    if (!user?.id) return;
+    const currentUser = user;
+    let cancelled = false;
     async function load() {
-      if (!user) return;
-      const recs = await recordService.getAll();
+      const [recs, cocktails] = await Promise.all([
+        recordService.getAll(),
+        cocktailService.getAll(),
+      ]);
+      if (cancelled) return;
+
       setRecords(recs);
 
-      const cocktails = await cocktailService.getAll();
+      // Recommendations (cached in state, only recompute if user changes)
       const recordedIds = recs.map((r) => r.cocktailId);
-      const reco = getComfortRecommendations(user.tasteVector, cocktails, recordedIds);
+      const reco = getComfortRecommendations(currentUser.tasteVector, cocktails, recordedIds);
       setAllRecommendations(reco);
       setRecommendations(reco.slice(0, 3));
+
+      // Weekly favorite base spirit (resolve in same pass)
+      const now = new Date();
+      const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+      const weekRecords = recs.filter((r) => new Date(r.recordedAt) >= weekAgo);
+      const cocktailMap = new Map(cocktails.map((c) => [c.id, c]));
+      const baseCounts: Record<string, number> = {};
+      for (const r of weekRecords) {
+        const c = cocktailMap.get(r.cocktailId);
+        if (c) baseCounts[c.baseSpirit] = (baseCounts[c.baseSpirit] || 0) + 1;
+      }
+      const sorted = Object.entries(baseCounts).sort((a, b) => b[1] - a[1]);
+      setWeeklyFavoriteBase(sorted[0]?.[0] || "---");
+
       setLoading(false);
     }
     load();
-  }, [user]);
+    return () => { cancelled = true; };
+  }, [user?.id, user?.tasteVector]);
 
   const handleShuffle = useCallback(() => {
     const shuffled = shuffleArray(allRecommendations);
@@ -97,33 +123,7 @@ export default function HomePage() {
     return records.filter((r) => new Date(r.recordedAt) >= weekAgo).length;
   }, [records]);
 
-  // Resolve favorite base spirit with actual cocktail data
   const [weeklyFavoriteBase, setWeeklyFavoriteBase] = useState("---");
-  useEffect(() => {
-    async function resolveBase() {
-      if (records.length === 0) return;
-      const now = new Date();
-      const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
-      const weekRecords = records.filter((r) => new Date(r.recordedAt) >= weekAgo);
-      if (weekRecords.length === 0) {
-        setWeeklyFavoriteBase("---");
-        return;
-      }
-      const ids = [...new Set(weekRecords.map((r) => r.cocktailId))];
-      const cocktails = await cocktailService.getByIds(ids);
-      const cocktailMap = new Map(cocktails.map((c) => [c.id, c]));
-      const baseCounts: Record<string, number> = {};
-      for (const r of weekRecords) {
-        const c = cocktailMap.get(r.cocktailId);
-        if (c) {
-          baseCounts[c.baseSpirit] = (baseCounts[c.baseSpirit] || 0) + 1;
-        }
-      }
-      const sorted = Object.entries(baseCounts).sort((a, b) => b[1] - a[1]);
-      setWeeklyFavoriteBase(sorted[0]?.[0] || "---");
-    }
-    resolveBase();
-  }, [records]);
 
   if (loading || !user) {
     return (
