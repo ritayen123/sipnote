@@ -118,4 +118,85 @@ export const cocktailsData: Cocktail[] = [
   { id: "c098", nameEn: "Violet Fizz", nameZh: "紫羅蘭費茲", category: "特殊風格", baseSpirit: "Gin", acidity: 3, sweetness: 3, bitterness: 1, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["紫羅蘭", "檸檬", "藥草"] },
   { id: "c099", nameEn: "Cardamom Whisky Sour", nameZh: "豆蔻威士忌酸酒", category: "特殊風格", baseSpirit: "Whiskey", acidity: 4, sweetness: 3, bitterness: 2, saltiness: 1, strength: 4, texture: "medium", temperatureFeel: "warm", flavorTags: ["豆蔻", "檸檬", "橡木"] },
   { id: "c100", nameEn: "Rose Water Gimlet", nameZh: "玫瑰水琴蕾", category: "特殊風格", baseSpirit: "Gin", acidity: 3, sweetness: 2, bitterness: 1, saltiness: 1, strength: 4, texture: "light", temperatureFeel: "cool", flavorTags: ["玫瑰", "萊姆", "藥草"] },
+
+  // === 經典補充 ===
+  { id: "c101", nameEn: "Rusty Nail", nameZh: "鏽釘", category: "IBA經典", baseSpirit: "Whiskey", acidity: 1, sweetness: 3, bitterness: 2, saltiness: 1, strength: 5, texture: "heavy", temperatureFeel: "warm", flavorTags: ["橡木", "蜂蜜", "藥草"] },
+  { id: "c102", nameEn: "Godfather", nameZh: "教父", category: "IBA經典", baseSpirit: "Whiskey", acidity: 1, sweetness: 3, bitterness: 2, saltiness: 1, strength: 5, texture: "heavy", temperatureFeel: "warm", flavorTags: ["杏仁", "橡木", "焦糖"] },
+  { id: "c103", nameEn: "Stinger", nameZh: "毒刺", category: "IBA經典", baseSpirit: "Brandy", acidity: 1, sweetness: 3, bitterness: 1, saltiness: 1, strength: 4, texture: "medium", temperatureFeel: "cool", flavorTags: ["薄荷", "香草"] },
+  { id: "c104", nameEn: "Harvey Wallbanger", nameZh: "乃維乃邦格", category: "IBA經典", baseSpirit: "Vodka", acidity: 2, sweetness: 4, bitterness: 1, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["橙", "香草", "藥草"] },
+  { id: "c105", nameEn: "Jack Rose", nameZh: "傑克乃斯", category: "IBA經典", baseSpirit: "Brandy", acidity: 3, sweetness: 3, bitterness: 1, saltiness: 1, strength: 3, texture: "medium", temperatureFeel: "neutral", flavorTags: ["蘋果", "萊姆", "石榴"] },
+  { id: "c106", nameEn: "Vesper Martini", nameZh: "乃斯乃馬丁尼", category: "IBA經典", baseSpirit: "Multiple", acidity: 1, sweetness: 1, bitterness: 2, saltiness: 1, strength: 5, texture: "light", temperatureFeel: "cool", flavorTags: ["藥草", "檸檬"] },
+  { id: "c107", nameEn: "Peach Bellini", nameZh: "蜜桃貝里尼", category: "低酒精", baseSpirit: "Champagne", acidity: 2, sweetness: 4, bitterness: 1, saltiness: 1, strength: 1, texture: "light", temperatureFeel: "cool", flavorTags: ["桃子"] },
+  { id: "c108", nameEn: "Ramos Gin Fizz", nameZh: "拉莫斯琴費茲", category: "IBA經典", baseSpirit: "Gin", acidity: 3, sweetness: 3, bitterness: 1, saltiness: 1, strength: 2, texture: "heavy", temperatureFeel: "cool", flavorTags: ["檸檬", "鮮奶油", "橙花"] },
+  { id: "c109", nameEn: "Ward Eight", nameZh: "第八區", category: "IBA經典", baseSpirit: "Whiskey", acidity: 3, sweetness: 3, bitterness: 1, saltiness: 1, strength: 4, texture: "medium", temperatureFeel: "neutral", flavorTags: ["橙", "檸檬", "石榴"] },
+  { id: "c110", nameEn: "Between the Sheets", nameZh: "床笫之間", category: "IBA經典", baseSpirit: "Multiple", acidity: 3, sweetness: 2, bitterness: 1, saltiness: 1, strength: 4, texture: "light", temperatureFeel: "cool", flavorTags: ["橙", "檸檬"] },
+
+  // === 日本酒吧風格 ===
+  { id: "c111", nameEn: "Whisky Highball", nameZh: "威士忌高球", category: "日式", baseSpirit: "Whiskey", acidity: 1, sweetness: 1, bitterness: 1, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["橡木"] },
+  { id: "c112", nameEn: "Midori Sour", nameZh: "蜜多麗酸酒", category: "日式", baseSpirit: "Liqueur", acidity: 3, sweetness: 4, bitterness: 1, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["芒果", "檸檬"] },
+  { id: "c113", nameEn: "Calpis Sour", nameZh: "可爾必思沙瓦", category: "日式", baseSpirit: "Vodka", acidity: 3, sweetness: 4, bitterness: 1, saltiness: 1, strength: 1, texture: "light", temperatureFeel: "cool", flavorTags: ["牛奶", "檸檬"] },
+  { id: "c114", nameEn: "Plum Wine Spritz", nameZh: "梅酒氣泡", category: "日式", baseSpirit: "Liqueur", acidity: 3, sweetness: 4, bitterness: 1, saltiness: 1, strength: 1, texture: "light", temperatureFeel: "cool", flavorTags: ["梅子"] },
+  { id: "c115", nameEn: "Yuzu Gin & Tonic", nameZh: "柚子琴通寧", category: "日式", baseSpirit: "Gin", acidity: 3, sweetness: 2, bitterness: 2, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["柚子", "藥草"] },
+  { id: "c116", nameEn: "Sakura Martini", nameZh: "櫻花馬丁尼", category: "日式", baseSpirit: "Gin", acidity: 1, sweetness: 3, bitterness: 1, saltiness: 1, strength: 3, texture: "light", temperatureFeel: "cool", flavorTags: ["玫瑰", "藥草"] },
+  { id: "c117", nameEn: "Okinawa Sour", nameZh: "沖繩酸酒", category: "日式", baseSpirit: "Shochu", acidity: 3, sweetness: 3, bitterness: 1, saltiness: 1, strength: 3, texture: "medium", temperatureFeel: "cool", flavorTags: ["萊姆", "焦糖"] },
+  { id: "c118", nameEn: "Matcha Espresso Martini", nameZh: "抹茶濃縮馬丁尼", category: "日式", baseSpirit: "Vodka", acidity: 1, sweetness: 3, bitterness: 3, saltiness: 1, strength: 4, texture: "medium", temperatureFeel: "cool", flavorTags: ["抹茶", "濃縮咖啡", "香草"] },
+
+  // === 台灣風味 ===
+  { id: "c120", nameEn: "Passion Fruit Martini (Taiwanese)", nameZh: "台式百香果馬丁尼", category: "台灣風味", baseSpirit: "Vodka", acidity: 4, sweetness: 4, bitterness: 1, saltiness: 1, strength: 3, texture: "medium", temperatureFeel: "cool", flavorTags: ["百香果", "檸檬"] },
+  { id: "c121", nameEn: "Mango Sticky Rice", nameZh: "芒果糯米", category: "台灣風味", baseSpirit: "Rum", acidity: 1, sweetness: 5, bitterness: 1, saltiness: 1, strength: 2, texture: "heavy", temperatureFeel: "cool", flavorTags: ["芒果", "椰子", "鮮奶油"] },
+  { id: "c122", nameEn: "Oolong Highball", nameZh: "烏龍茶高球", category: "台灣風味", baseSpirit: "Whiskey", acidity: 1, sweetness: 1, bitterness: 2, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["伯爵茶", "橡木"] },
+  { id: "c123", nameEn: "Lemon Aiyu Fizz", nameZh: "檸檬愛玉氣泡", category: "台灣風味", baseSpirit: "Gin", acidity: 4, sweetness: 3, bitterness: 1, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["檸檬", "藥草"] },
+  { id: "c124", nameEn: "Pineapple Cake Sour", nameZh: "鳳梨酥酸酒", category: "台灣風味", baseSpirit: "Whiskey", acidity: 3, sweetness: 4, bitterness: 1, saltiness: 1, strength: 3, texture: "medium", temperatureFeel: "neutral", flavorTags: ["鳳梨", "奶油", "焦糖"] },
+  { id: "c125", nameEn: "Kaoliang Negroni", nameZh: "高粱內格羅尼", category: "台灣風味", baseSpirit: "Baijiu", acidity: 1, sweetness: 2, bitterness: 5, saltiness: 1, strength: 5, texture: "heavy", temperatureFeel: "warm", flavorTags: ["苦艾", "橙", "藥草"] },
+
+  // === 現代流行 ===
+  { id: "c126", nameEn: "Aperol Sour", nameZh: "艾普羅酸酒", category: "新經典", baseSpirit: "Liqueur", acidity: 3, sweetness: 3, bitterness: 3, saltiness: 1, strength: 2, texture: "medium", temperatureFeel: "cool", flavorTags: ["橙", "藥草", "檸檬"] },
+  { id: "c127", nameEn: "Negroni Sbagliato", nameZh: "內格羅尼斯巴利亞托", category: "經典變奏", baseSpirit: "Wine", acidity: 2, sweetness: 2, bitterness: 4, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["苦艾", "橙", "藥草"] },
+  { id: "c128", nameEn: "Espresso Negroni", nameZh: "濃縮咖啡內格羅尼", category: "經典變奏", baseSpirit: "Gin", acidity: 1, sweetness: 2, bitterness: 5, saltiness: 1, strength: 4, texture: "medium", temperatureFeel: "neutral", flavorTags: ["濃縮咖啡", "苦艾", "橙"] },
+  { id: "c129", nameEn: "Watermelon Sugar", nameZh: "西瓜糖", category: "新經典", baseSpirit: "Vodka", acidity: 2, sweetness: 4, bitterness: 1, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["薄荷", "萊姆"] },
+  { id: "c130", nameEn: "Lychee Rose", nameZh: "荔枝玫瑰", category: "新經典", baseSpirit: "Gin", acidity: 2, sweetness: 4, bitterness: 1, saltiness: 1, strength: 3, texture: "light", temperatureFeel: "cool", flavorTags: ["荔枝", "玫瑰", "藥草"] },
+  { id: "c131", nameEn: "Yuzu Spritz", nameZh: "柚子氣泡", category: "低酒精", baseSpirit: "Wine", acidity: 3, sweetness: 3, bitterness: 1, saltiness: 1, strength: 1, texture: "light", temperatureFeel: "cool", flavorTags: ["柚子", "接骨木花"] },
+  { id: "c132", nameEn: "Dirty Shirley", nameZh: "髒乃莉", category: "新經典", baseSpirit: "Vodka", acidity: 2, sweetness: 5, bitterness: 1, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["檸檬"] },
+  { id: "c133", nameEn: "Ranch Water", nameZh: "牧場水", category: "新經典", baseSpirit: "Tequila", acidity: 3, sweetness: 1, bitterness: 1, saltiness: 1, strength: 3, texture: "light", temperatureFeel: "cool", flavorTags: ["萊姆"] },
+  { id: "c134", nameEn: "Frozen Margarita", nameZh: "冰沙瑪格麗特", category: "經典變奏", baseSpirit: "Tequila", acidity: 4, sweetness: 3, bitterness: 1, saltiness: 2, strength: 3, texture: "heavy", temperatureFeel: "cool", flavorTags: ["萊姆", "鹽味", "橙"] },
+  { id: "c135", nameEn: "Pornstar Spritz", nameZh: "百香果氣泡", category: "低酒精", baseSpirit: "Wine", acidity: 3, sweetness: 4, bitterness: 1, saltiness: 1, strength: 1, texture: "light", temperatureFeel: "cool", flavorTags: ["百香果", "香草"] },
+
+  // === Highball 系列 ===
+  { id: "c136", nameEn: "Gin & Tonic", nameZh: "琴通寧", category: "新經典", baseSpirit: "Gin", acidity: 2, sweetness: 1, bitterness: 3, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["萊姆", "藥草"] },
+  { id: "c137", nameEn: "Vodka Soda", nameZh: "伏特加蘇打", category: "新經典", baseSpirit: "Vodka", acidity: 1, sweetness: 1, bitterness: 1, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["檸檬"] },
+  { id: "c138", nameEn: "Cuba Libre", nameZh: "自由古巴", category: "新經典", baseSpirit: "Rum", acidity: 2, sweetness: 4, bitterness: 1, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["萊姆", "焦糖"] },
+  { id: "c139", nameEn: "Scotch & Soda", nameZh: "蘇格蘭蘇打", category: "新經典", baseSpirit: "Whiskey", acidity: 1, sweetness: 1, bitterness: 2, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["橡木", "煙燻"] },
+  { id: "c140", nameEn: "Campari & Soda", nameZh: "金巴利蘇打", category: "低酒精", baseSpirit: "Liqueur", acidity: 1, sweetness: 2, bitterness: 5, saltiness: 1, strength: 1, texture: "light", temperatureFeel: "cool", flavorTags: ["苦艾", "橙", "藥草"] },
+
+  // === 甜點系補充 ===
+  { id: "c141", nameEn: "Pistachio Sour", nameZh: "開心果酸酒", category: "甜點系", baseSpirit: "Vodka", acidity: 3, sweetness: 4, bitterness: 1, saltiness: 1, strength: 3, texture: "medium", temperatureFeel: "cool", flavorTags: ["杏仁", "檸檬", "鮮奶油"] },
+  { id: "c142", nameEn: "Bananas Foster", nameZh: "焦糖香蕉", category: "甜點系", baseSpirit: "Rum", acidity: 1, sweetness: 5, bitterness: 1, saltiness: 1, strength: 3, texture: "heavy", temperatureFeel: "warm", flavorTags: ["焦糖", "香草", "肉桂"] },
+  { id: "c143", nameEn: "Crème Brûlée Martini", nameZh: "焦糖布蕾馬丁尼", category: "甜點系", baseSpirit: "Vodka", acidity: 1, sweetness: 5, bitterness: 1, saltiness: 1, strength: 3, texture: "heavy", temperatureFeel: "neutral", flavorTags: ["焦糖", "香草", "鮮奶油"] },
+  { id: "c144", nameEn: "Affogato Cocktail", nameZh: "阿法奇朵調酒", category: "甜點系", baseSpirit: "Liqueur", acidity: 1, sweetness: 4, bitterness: 3, saltiness: 1, strength: 2, texture: "heavy", temperatureFeel: "cool", flavorTags: ["濃縮咖啡", "香草", "鮮奶油"] },
+  { id: "c145", nameEn: "Matcha White Russian", nameZh: "抹茶白色俄羅斯", category: "甜點系", baseSpirit: "Vodka", acidity: 1, sweetness: 4, bitterness: 2, saltiness: 1, strength: 3, texture: "heavy", temperatureFeel: "neutral", flavorTags: ["抹茶", "鮮奶油", "香草"] },
+
+  // === 派對/入門款 ===
+  { id: "c146", nameEn: "Long Island Iced Tea", nameZh: "長島冰茶", category: "新經典", baseSpirit: "Multiple", acidity: 3, sweetness: 2, bitterness: 1, saltiness: 1, strength: 5, texture: "light", temperatureFeel: "cool", flavorTags: ["檸檬", "萊姆"] },
+  { id: "c147", nameEn: "Sex on the Beach", nameZh: "性感沙灘", category: "新經典", baseSpirit: "Vodka", acidity: 2, sweetness: 4, bitterness: 1, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["桃子", "橙", "蘋果"] },
+  { id: "c148", nameEn: "Frozen Piña Colada", nameZh: "冰沙鳳梨可樂達", category: "熱帶/Tiki", baseSpirit: "Rum", acidity: 1, sweetness: 5, bitterness: 1, saltiness: 1, strength: 2, texture: "heavy", temperatureFeel: "cool", flavorTags: ["鳳梨", "椰子", "鮮奶油"] },
+  { id: "c149", nameEn: "Tequila Shot with Sangrita", nameZh: "龍舌蘭純飲", category: "特殊風格", baseSpirit: "Tequila", acidity: 2, sweetness: 1, bitterness: 1, saltiness: 2, strength: 5, texture: "light", temperatureFeel: "warm", flavorTags: ["辣椒", "橙", "鹽味"] },
+  { id: "c150", nameEn: "B-52", nameZh: "B-52 轟炸機", category: "特殊風格", baseSpirit: "Liqueur", acidity: 1, sweetness: 5, bitterness: 1, saltiness: 1, strength: 3, texture: "heavy", temperatureFeel: "warm", flavorTags: ["咖啡", "鮮奶油", "橙"] },
+
+  // === 居酒屋定番 ===
+  { id: "c151", nameEn: "Lemon Sour", nameZh: "檸檬沙瓦", category: "居酒屋", baseSpirit: "Shochu", acidity: 4, sweetness: 2, bitterness: 1, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["檸檬"] },
+  { id: "c152", nameEn: "Grapefruit Sour", nameZh: "葡萄柚沙瓦", category: "居酒屋", baseSpirit: "Shochu", acidity: 3, sweetness: 3, bitterness: 1, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["葡萄柚"] },
+  { id: "c153", nameEn: "Oolong Hai", nameZh: "烏龍嗨", category: "居酒屋", baseSpirit: "Shochu", acidity: 1, sweetness: 1, bitterness: 2, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["伯爵茶"] },
+  { id: "c154", nameEn: "Green Tea Hai", nameZh: "綠茶嗨", category: "居酒屋", baseSpirit: "Shochu", acidity: 1, sweetness: 2, bitterness: 2, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["綠茶"] },
+  { id: "c155", nameEn: "Cassis Orange", nameZh: "黑醋栗柳橙", category: "居酒屋", baseSpirit: "Liqueur", acidity: 2, sweetness: 4, bitterness: 1, saltiness: 1, strength: 1, texture: "light", temperatureFeel: "cool", flavorTags: ["黑醋栗", "橙"] },
+  { id: "c156", nameEn: "Cassis Soda", nameZh: "黑醋栗蘇打", category: "居酒屋", baseSpirit: "Liqueur", acidity: 2, sweetness: 4, bitterness: 1, saltiness: 1, strength: 1, texture: "light", temperatureFeel: "cool", flavorTags: ["黑醋栗"] },
+  { id: "c157", nameEn: "Peach Oolong", nameZh: "蜜桃烏龍", category: "居酒屋", baseSpirit: "Liqueur", acidity: 1, sweetness: 4, bitterness: 1, saltiness: 1, strength: 1, texture: "light", temperatureFeel: "cool", flavorTags: ["桃子", "伯爵茶"] },
+  { id: "c158", nameEn: "Fuzzy Navel", nameZh: "乃絨肚臍", category: "居酒屋", baseSpirit: "Liqueur", acidity: 2, sweetness: 4, bitterness: 1, saltiness: 1, strength: 1, texture: "light", temperatureFeel: "cool", flavorTags: ["桃子", "橙"] },
+  { id: "c159", nameEn: "Kahlúa Milk", nameZh: "卡魯哇牛奶", category: "居酒屋", baseSpirit: "Liqueur", acidity: 1, sweetness: 4, bitterness: 2, saltiness: 1, strength: 1, texture: "heavy", temperatureFeel: "cool", flavorTags: ["咖啡", "牛奶", "香草"] },
+  { id: "c160", nameEn: "Malibu Coke", nameZh: "乃里乃可樂", category: "居酒屋", baseSpirit: "Rum", acidity: 1, sweetness: 5, bitterness: 1, saltiness: 1, strength: 1, texture: "light", temperatureFeel: "cool", flavorTags: ["椰子"] },
+  { id: "c161", nameEn: "Yuzu Honey Sour", nameZh: "柚子蜂蜜沙瓦", category: "居酒屋", baseSpirit: "Shochu", acidity: 3, sweetness: 3, bitterness: 1, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["柚子", "蜂蜜"] },
+  { id: "c162", nameEn: "Hoppy (Shochu Beer)", nameZh: "Hoppy 乃酎啤酒", category: "居酒屋", baseSpirit: "Shochu", acidity: 1, sweetness: 1, bitterness: 3, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: [] },
+  { id: "c163", nameEn: "Umeshu Rock", nameZh: "梅酒加冰", category: "居酒屋", baseSpirit: "Liqueur", acidity: 3, sweetness: 4, bitterness: 1, saltiness: 1, strength: 2, texture: "medium", temperatureFeel: "cool", flavorTags: ["梅子"] },
+  { id: "c164", nameEn: "Lychee Sour", nameZh: "荔枝沙瓦", category: "居酒屋", baseSpirit: "Shochu", acidity: 2, sweetness: 4, bitterness: 1, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["荔枝", "檸檬"] },
+  { id: "c165", nameEn: "Jasmine Hai", nameZh: "茉莉嗨", category: "居酒屋", baseSpirit: "Shochu", acidity: 1, sweetness: 2, bitterness: 1, saltiness: 1, strength: 2, texture: "light", temperatureFeel: "cool", flavorTags: ["茉莉"] },
 ];
+
