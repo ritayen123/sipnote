@@ -48,13 +48,30 @@ export const recordService = {
     try {
       const user = await userService.getCurrentUser();
       if (!user) return [];
-      return db.records
+      const all = await db.records
         .where("userId")
         .equals(user.id)
         .reverse()
         .sortBy("recordedAt");
+      return all.filter((r) => !r.isDeleted);
     } catch {
       return [];
+    }
+  },
+
+  async softDelete(id: string): Promise<void> {
+    try {
+      await db.records.update(id, { isDeleted: true });
+    } catch {
+      // silent
+    }
+  },
+
+  async restore(id: string): Promise<void> {
+    try {
+      await db.records.update(id, { isDeleted: false });
+    } catch {
+      // silent
     }
   },
 

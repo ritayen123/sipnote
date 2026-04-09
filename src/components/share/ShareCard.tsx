@@ -13,6 +13,7 @@ import {
   CheckIcon,
   StarIcon,
 } from "../ui/Icons";
+import Modal from "../ui/Modal";
 
 interface ShareCardProps {
   type: "record" | "bar" | "taste_profile";
@@ -133,8 +134,7 @@ export default function ShareCard({
   const cardHeight = ratio === "1:1" ? 360 : 480;
 
   return (
-    <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-      <div className="bg-bg-secondary rounded-2xl p-4 max-w-sm w-full max-h-[90vh] overflow-y-auto">
+    <Modal open={true} onClose={onClose}>
         {/* Ratio toggle */}
         <div className="flex gap-2 mb-3">
           <Button
@@ -323,7 +323,6 @@ export default function ShareCard({
             關閉
           </Button>
         </div>
-      </div>
-    </div>
+    </Modal>
   );
 }

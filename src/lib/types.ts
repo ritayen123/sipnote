@@ -50,6 +50,7 @@ export interface DrinkRecord {
   priceRange?: "<300" | "300-500" | "500-800" | "800+";
   photoUrl?: string;
   isPublic: boolean;
+  isDeleted?: boolean;
 }
 
 export interface Bar {
