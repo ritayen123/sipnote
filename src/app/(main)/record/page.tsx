@@ -12,6 +12,7 @@ import SliderInput from "../../../components/ui/SliderInput";
 import FlavorTagPicker from "../../../components/ui/FlavorTagPicker";
 import TasteBars from "../../../components/ui/TasteBars";
 import PhotoUpload from "../../../components/ui/PhotoUpload";
+import BarSearch from "../../../components/ui/BarSearch";
 import { useApp } from "../../../lib/context/AppContext";
 import { getCocktailDescription, getBaseDescription } from "../../../lib/utils/cocktail-desc";
 import {
@@ -94,6 +95,7 @@ function RecordPageInner() {
   const [occasion, setOccasion] = useState<string>("");
   const [priceRange, setPriceRange] = useState<string>("");
   const [barName, setBarName] = useState("");
+  const [barGooglePlaceId, setBarGooglePlaceId] = useState<string | undefined>();
   const [barAmbiance, setBarAmbiance] = useState(3);
   const [barServiceRating, setBarServiceRating] = useState(3);
   const [barFood, setBarFood] = useState(3);
@@ -168,7 +170,7 @@ function RecordPageInner() {
 
     let barId: string | undefined;
     if (barName.trim()) {
-      const bar = await barSvc.create({ name: barName.trim() });
+      const bar = await barSvc.create({ name: barName.trim(), googlePlaceId: barGooglePlaceId });
       barId = bar.id;
       if (mode === "full") {
         await barSvc.updateStats(bar.id, barAmbiance, barServiceRating, barFood);
@@ -518,16 +520,13 @@ function RecordPageInner() {
             </div>
           </div>
 
-          <div>
-            <label className="text-sm text-text-secondary block mb-2">酒吧名稱（選填）</label>
-            <input
-              type="text"
-              value={barName}
-              onChange={(e) => setBarName(e.target.value)}
-              placeholder="輸入酒吧名稱"
-              className="w-full px-4 py-3 bg-bg-input border border-border rounded-xl text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent"
-            />
-          </div>
+          <BarSearch
+            value={barName}
+            onChange={(name, placeId) => {
+              setBarName(name);
+              setBarGooglePlaceId(placeId);
+            }}
+          />
 
           <div>
             <label className="text-sm text-text-secondary block mb-2">照片（選填）</label>
@@ -649,16 +648,13 @@ function RecordPageInner() {
 
     // Step 4: Bar info
     <div key="bar" className="space-y-5">
-      <div>
-        <label className="text-sm text-text-secondary block mb-2">酒吧名稱（選填）</label>
-        <input
-          type="text"
-          value={barName}
-          onChange={(e) => setBarName(e.target.value)}
-          placeholder="輸入酒吧名稱"
-          className="w-full px-4 py-3 bg-bg-input border border-border rounded-xl text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent"
-        />
-      </div>
+      <BarSearch
+        value={barName}
+        onChange={(name, placeId) => {
+          setBarName(name);
+          setBarGooglePlaceId(placeId);
+        }}
+      />
       {barName && (
         <>
           <SliderInput label="環境" value={barAmbiance} onChange={setBarAmbiance} labels={["差", "優"]} />
