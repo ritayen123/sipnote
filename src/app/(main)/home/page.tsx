@@ -219,7 +219,7 @@ export default function HomePage() {
                       style={{ backgroundColor: getBaseColor(rec.cocktail.baseSpirit) }}
                     />
                     <div className="flex-1 min-w-0">
-                      <p className="font-medium text-lg">{rec.cocktail.nameZh}</p>
+                      <p className="font-medium text-lg">{rec.cocktail.nameEn}</p>
                       <p className="text-text-muted text-sm">{rec.cocktail.nameEn}</p>
                     </div>
                   </div>

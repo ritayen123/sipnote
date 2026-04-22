@@ -179,7 +179,7 @@ function RecordPageInner() {
 
     const recordData = {
       cocktailId: selectedCocktail?.id || "custom",
-      cocktailName: selectedCocktail?.nameZh || customName || "自訂調酒",
+      cocktailName: selectedCocktail?.nameEn || customName || "自訂調酒",
       barId,
       barName: barName.trim() || undefined,
       overallRating,
@@ -260,7 +260,7 @@ function RecordPageInner() {
         <div className="bg-bg-card rounded-2xl p-5 border border-border w-full mt-4">
           <p className="text-text-muted text-xs mb-1">你喝了</p>
           <p className="text-lg font-semibold">
-            {selectedCocktail?.nameZh || customName || "自訂調酒"}
+            {selectedCocktail?.nameEn || customName || "自訂調酒"}
           </p>
           <div className="flex items-center gap-2 mt-2">
             <StarRating value={overallRating} onChange={() => {}} size="sm" />
@@ -384,7 +384,7 @@ function RecordPageInner() {
             >
               <div className="flex justify-between items-start">
                 <div className="flex-1 min-w-0">
-                  <p className="font-medium">{c.nameZh}</p>
+                  <p className="font-medium">{c.nameEn}</p>
                   <p className="text-text-muted text-sm">{c.nameEn}</p>
                   <p className="text-text-muted text-xs mt-0.5">
                     {getBaseDescription(c.baseSpirit)} · {c.category}
@@ -444,7 +444,7 @@ function RecordPageInner() {
         <div className="bg-bg-card rounded-2xl p-5 border border-border">
           <p className="text-text-muted text-xs mb-1">你選了</p>
           <h2 className="text-2xl font-bold">
-            {selectedCocktail?.nameZh || customName}
+            {selectedCocktail?.nameEn || customName}
           </h2>
           {selectedCocktail && (
             <>
@@ -508,7 +508,7 @@ function RecordPageInner() {
     return (
       <div className="min-h-screen flex flex-col px-6 py-8">
         <h1 className="text-xl font-bold mb-2">
-          {selectedCocktail?.nameZh || customName}
+          {selectedCocktail?.nameEn || customName}
         </h1>
         <p className="text-text-muted text-sm mb-8">快速記錄</p>
 
@@ -711,7 +711,7 @@ function RecordPageInner() {
     <div className="min-h-screen flex flex-col px-6 py-6">
       <div className="flex justify-between items-center mb-2">
         <h1 className="text-lg font-bold">
-          {selectedCocktail?.nameZh || customName}
+          {selectedCocktail?.nameEn || customName}
         </h1>
         <span className="text-sm text-text-muted">
           {step + 1}/{fullSteps.length}
