@@ -13,7 +13,7 @@ export default function SliderInput({
   label,
   value,
   onChange,
-  min = 1,
+  min = 0,
   max = 5,
   labels,
 }: SliderInputProps) {

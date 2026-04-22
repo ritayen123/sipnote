@@ -66,11 +66,11 @@ function RecordPageInner() {
   const [selectedCocktail, setSelectedCocktail] = useState<Cocktail | null>(null);
   const [customName, setCustomName] = useState("");
   const [overallRating, setOverallRating] = useState(0);
-  const [acidityRating, setAcidityRating] = useState(3);
-  const [sweetnessRating, setSweetnessRating] = useState(3);
-  const [bitternessRating, setBitternessRating] = useState(3);
-  const [saltinessRating, setSaltinessRating] = useState(3);
-  const [strengthRating, setStrengthRating] = useState(3);
+  const [acidityRating, setAcidityRating] = useState(0);
+  const [sweetnessRating, setSweetnessRating] = useState(0);
+  const [bitternessRating, setBitternessRating] = useState(0);
+  const [saltinessRating, setSaltinessRating] = useState(0);
+  const [strengthRating, setStrengthRating] = useState(0);
   const [texture, setTexture] = useState<"light" | "medium" | "heavy">("medium");
   const [temperatureFeel, setTemperatureFeel] = useState<"cool" | "neutral" | "warm">("neutral");
   const [flavorTags, setFlavorTags] = useState<string[]>([]);
