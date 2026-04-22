@@ -80,7 +80,7 @@ function RecordPageInner() {
   const [barGooglePlaceId, setBarGooglePlaceId] = useState<string | undefined>();
   const [barAmbiance, setBarAmbiance] = useState(3);
   const [barServiceRating, setBarServiceRating] = useState(3);
-  const [barFood, setBarFood] = useState(3);
+  const [barFood, setBarFood] = useState<number | null>(null);
 
   const [photoUrl, setPhotoUrl] = useState<string | undefined>(undefined);
   const [saving, setSaving] = useState(false);
@@ -158,7 +158,7 @@ function RecordPageInner() {
       const bar = await barSvc.create({ name: barName.trim(), googlePlaceId: barGooglePlaceId });
       barId = bar.id;
       if (mode === "full") {
-        await barSvc.updateStats(bar.id, barAmbiance, barServiceRating, barFood);
+        await barSvc.updateStats(bar.id, barAmbiance, barServiceRating, barFood ?? 0);
       }
     }
 
@@ -180,7 +180,7 @@ function RecordPageInner() {
         temperatureFeel,
         barAmbiance: barName ? barAmbiance : undefined,
         barService: barName ? barServiceRating : undefined,
-        barFood: barName ? barFood : undefined,
+        barFood: barName && barFood !== null ? barFood : undefined,
         occasion: occasion as "date" | "friends" | "solo" | "celebration" | "business" | undefined,
         priceRange: priceRange as "<300" | "300-500" | "500-800" | "800+" | undefined,
       }),
@@ -624,7 +624,29 @@ function RecordPageInner() {
         <>
           <SliderInput label="環境" value={barAmbiance} onChange={setBarAmbiance} labels={["差", "優"]} />
           <SliderInput label="服務" value={barServiceRating} onChange={setBarServiceRating} labels={["差", "優"]} />
-          <SliderInput label="餐食" value={barFood} onChange={setBarFood} labels={["差", "優"]} />
+          {barFood === null ? (
+            <button
+              type="button"
+              onClick={() => setBarFood(3)}
+              className="text-sm text-text-muted hover:text-accent transition-colors"
+            >
+              + 評價餐食（選填）
+            </button>
+          ) : (
+            <div>
+              <div className="flex justify-between items-center mb-1">
+                <span className="text-sm text-text-secondary">餐食</span>
+                <button
+                  type="button"
+                  onClick={() => setBarFood(null)}
+                  className="text-xs text-text-muted hover:text-accent"
+                >
+                  移除
+                </button>
+              </div>
+              <SliderInput label="" value={barFood} onChange={setBarFood} labels={["差", "優"]} />
+            </div>
+          )}
         </>
       )}
     </div>,
