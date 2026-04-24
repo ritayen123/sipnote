@@ -350,7 +350,9 @@ function RecordPageInner() {
               <div className="flex justify-between items-start">
                 <div className="flex-1 min-w-0">
                   <p className="font-medium">{c.nameEn}</p>
-                  <p className="text-text-muted text-sm">{c.nameEn}</p>
+                  {c.nameZh !== c.nameEn && (
+                    <p className="text-text-muted text-sm">{c.nameZh}</p>
+                  )}
                   <p className="text-text-muted text-xs mt-0.5">
                     {getBaseDescription(c.baseSpirit)} · {c.category}
                   </p>
@@ -413,7 +415,9 @@ function RecordPageInner() {
           </h2>
           {selectedCocktail && (
             <>
-              <p className="text-text-muted text-sm mt-0.5">{selectedCocktail.nameEn}</p>
+              {selectedCocktail.nameZh !== selectedCocktail.nameEn && (
+                <p className="text-text-muted text-sm mt-0.5">{selectedCocktail.nameZh}</p>
+              )}
 
               <p className="text-text-secondary text-sm mt-3">
                 {getBaseDescription(selectedCocktail.baseSpirit)} · {selectedCocktail.category}

@@ -220,7 +220,9 @@ export default function HomePage() {
                     />
                     <div className="flex-1 min-w-0">
                       <p className="font-medium text-lg">{rec.cocktail.nameEn}</p>
-                      <p className="text-text-muted text-sm">{rec.cocktail.nameEn}</p>
+                      {rec.cocktail.nameZh !== rec.cocktail.nameEn && (
+                        <p className="text-text-muted text-sm">{rec.cocktail.nameZh}</p>
+                      )}
                     </div>
                   </div>
                   <div className="text-right ml-3 shrink-0">
